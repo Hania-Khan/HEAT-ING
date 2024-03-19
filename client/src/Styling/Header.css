@@ -2,6 +2,10 @@
 .app-container {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* This ensures the header stays on top of other elements */
   }
   
   .header {
@@ -11,6 +15,7 @@
     align-items: center;
     padding: 0.5px 260px;
     margin-top: -90px;
+    
   }
   
   .contact-info {

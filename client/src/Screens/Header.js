@@ -54,30 +54,26 @@ function Header() {
       </div>
 
       <div className="main-content">
-  <div className="yellow-ribbon">
-    <div className="ribbon-column"></div> {/* Empty placeholder */}
-    <div className="ribbon-column" onClick={() => navigateTo("/")}>
-      Home
-    </div>
-    <div className="ribbon-column" onClick={() => navigateTo("/about-us")}>
-      About Us
-    </div>
-    <div className="ribbon-column" onClick={() => navigateTo("/solar")}>
-      Solar
-    </div>
-    <div className="ribbon-column" onClick={() => navigateTo("/careers")}>
-      Careers
-    </div>
-    <div className="ribbon-column" onClick={() => navigateTo("/contact")}>
-      Contact
-    </div>
-    <div className="ribbon-column"></div> {/* Empty placeholder */}
-  </div>
-</div>
-
-
-
-
+          <div className="yellow-ribbon">
+          <div className="ribbon-column"></div> {/* Empty placeholder */}
+          <div className="ribbon-column" onClick={() => navigateTo("/")}>
+            Home
+          </div>
+          <div className="ribbon-column" onClick={() => navigateTo("/about-us")}>
+            About Us
+          </div>
+          <div className="ribbon-column" onClick={() => navigateTo("/solar")}>
+            Solar
+          </div>
+          <div className="ribbon-column" onClick={() => navigateTo("/careers")}>
+            Careers
+          </div>
+          <div className="ribbon-column" onClick={() => navigateTo("/contact")}>
+            Contact
+          </div>
+          <div className="ribbon-column"></div> {/* Empty placeholder */}
+        </div>
+      </div>
     </div>
   );
 }

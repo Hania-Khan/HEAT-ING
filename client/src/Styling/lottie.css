@@ -1,0 +1,9 @@
+.lottie-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;;
+    height: 100h;
+    z-index: -1; /* This ensures the Lottie animation stays behind other content */
+    object-fit: cover; /* Stretch the Lottie animation */
+}
