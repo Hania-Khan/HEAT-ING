@@ -1,8 +1,8 @@
-import Header from "./Header"; // adjust the path as needed
+import Header from "../Components/Header"; // adjust the path as needed
 import "../Styling/Home.css";
 import React, { useState } from "react";
 import LottieAnimation from "./lottie";
-
+import appLogo from "../img/app-logo.png";
 function Home() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
@@ -48,12 +48,45 @@ function Home() {
     setStep(step - 1);
   };
 
+  const textContainer = document.getElementById("text-container-2");
+  const image = document.getElementById("image");
+
+  // Options for the IntersectionObserver
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5, // Trigger when 50% of the element is visible
+  };
+
+  // Callback function to handle the intersection changes
+  const handleIntersection = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // If the element is intersecting, apply animations
+        textContainer.style.opacity = "1";
+        textContainer.style.animation = "slideInFromRight 2s ease-out forwards";
+
+        image.style.transform = "scale(1)";
+        image.style.animation = "popout 1s ease forwards";
+
+        // Unobserve the target element to stop watching for intersection changes
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Create the IntersectionObserver
+  const observer = new IntersectionObserver(handleIntersection, options);
+
+  // Start observing the target element
+  observer.observe(document.getElementById("content-2"));
+
   return (
     <div>
       <Header />
       <div className="content-1">
         <div className="text-container">
-        <LottieAnimation />
+          <LottieAnimation />
           <p
             style={{
               fontSize: "2.5em",
@@ -547,7 +580,83 @@ function Home() {
         </div>
       </div>
 
-      {/* rest of your divs */}
+      <div class="content-2" id="content-2">
+        <div class="text-container-2" id="text-container-2">
+          <h1>
+            Do you qualify for a <br /> new boiler?
+          </h1>
+          <p>The answer to this is yes if:</p>
+          <ul>
+            <li>You are a homeowner or renting</li>
+            <li>You are receiving benefits</li>
+            <li>Your boiler is more than 10-years old</li>
+          </ul>
+          <p>Benefits include:</p>
+          <ul>
+            <li>Income Related ESA</li>
+            <li>Pension Credit Guarantee</li>
+            <li>Income Based JSA</li>
+            <li>Universal Credit</li>
+            <li>Child Benefit</li>
+            <li>Housing Benefit</li>
+          </ul>
+        </div>
+        <div class="image-container-2">
+          <img src={appLogo} alt="App Logo" class="image" id="image" />
+        </div>
+      </div>
+
+      <div class="content-3">
+        <div class="text-container-3">
+          <h1>
+            Do you qualify for a <br /> new boiler?
+          </h1>
+          <p>The answer to this is yes if:</p>
+          <ul>
+            <li>You are a homeowner or renting</li>
+            <li>You are receiving benefits</li>
+            <li>Your boiler is more than 10-years old</li>
+          </ul>
+          <p>Benefits include:</p>
+          <ul>
+            <li>Income Related ESA</li>
+            <li>Pension Credit Guarantee</li>
+            <li>Income Based JSA</li>
+            <li>Universal Credit</li>
+            <li>Child Benefit</li>
+            <li>Housing Benefit</li>
+          </ul>
+        </div>
+        <div class="image-container-3">
+          <img src={appLogo} alt="App Logo" className="app-logo" />
+        </div>
+      </div>
+
+      <div class="content-4">
+        <div class="text-container-4">
+          <h1>
+            Do you qualify for a <br /> new boiler?
+          </h1>
+          <p>The answer to this is yes if:</p>
+          <ul>
+            <li>You are a homeowner or renting</li>
+            <li>You are receiving benefits</li>
+            <li>Your boiler is more than 10-years old</li>
+          </ul>
+          <p>Benefits include:</p>
+          <ul>
+            <li>Income Related ESA</li>
+            <li>Pension Credit Guarantee</li>
+            <li>Income Based JSA</li>
+            <li>Universal Credit</li>
+            <li>Child Benefit</li>
+            <li>Housing Benefit</li>
+          </ul>
+        </div>
+        <div class="image-container-4">
+          <img src={appLogo} alt="App Logo" className="app-logo" />
+        </div>
+      </div>
     </div>
   );
 }
