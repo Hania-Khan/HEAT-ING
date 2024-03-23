@@ -1,8 +1,12 @@
-import Header from "../Components/Header"; // adjust the path as needed
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import "../Styling/Home.css";
 import React, { useState } from "react";
 import LottieAnimation from "./lottie";
 import appLogo from "../img/app-logo.png";
+import boiler1 from "../img/boiler1.jpg";
+import boiler from "../img/boiler.png";
+import { Link } from "react-router-dom";
 function Home() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
@@ -48,38 +52,12 @@ function Home() {
     setStep(step - 1);
   };
 
-  const textContainer = document.getElementById("text-container-2");
-  const image = document.getElementById("image");
-
-  // Options for the IntersectionObserver
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5, // Trigger when 50% of the element is visible
-  };
-
-  // Callback function to handle the intersection changes
-  const handleIntersection = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // If the element is intersecting, apply animations
-        textContainer.style.opacity = "1";
-        textContainer.style.animation = "slideInFromRight 2s ease-out forwards";
-
-        image.style.transform = "scale(1)";
-        image.style.animation = "popout 1s ease forwards";
-
-        // Unobserve the target element to stop watching for intersection changes
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  // Create the IntersectionObserver
-  const observer = new IntersectionObserver(handleIntersection, options);
-
-  // Start observing the target element
-  observer.observe(document.getElementById("content-2"));
+  function scrollToContent1() {
+    const content1 = document.querySelector(".content-1");
+    if (content1) {
+      content1.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <div>
@@ -580,8 +558,11 @@ function Home() {
         </div>
       </div>
 
-      <div class="content-2" id="content-2">
-        <div class="text-container-2" id="text-container-2">
+      <div class="content-2">
+        <div class="image-container-2">
+          <img src={boiler} alt="App Logo" class="image-2" />
+        </div>
+        <div class="text-container-2">
           <h1>
             Do you qualify for a <br /> new boiler?
           </h1>
@@ -600,63 +581,64 @@ function Home() {
             <li>Child Benefit</li>
             <li>Housing Benefit</li>
           </ul>
-        </div>
-        <div class="image-container-2">
-          <img src={appLogo} alt="App Logo" class="image" id="image" />
         </div>
       </div>
 
       <div class="content-3">
         <div class="text-container-3">
           <h1>
-            Do you qualify for a <br /> new boiler?
+            Free boiler
+            <br /> replacement <br />
+            schemes
           </h1>
-          <p>The answer to this is yes if:</p>
-          <ul>
-            <li>You are a homeowner or renting</li>
-            <li>You are receiving benefits</li>
-            <li>Your boiler is more than 10-years old</li>
-          </ul>
-          <p>Benefits include:</p>
-          <ul>
-            <li>Income Related ESA</li>
-            <li>Pension Credit Guarantee</li>
-            <li>Income Based JSA</li>
-            <li>Universal Credit</li>
-            <li>Child Benefit</li>
-            <li>Housing Benefit</li>
-          </ul>
+          <p>
+            Sunderland based North East Insulation <br />
+            Services Ltd can advise you how to take
+            <br /> advantage of the government's free boiler <br />
+            replacement scheme.
+          </p>
+          <div className="buttons-container-3">
+            <a href="/contact-us" className="button-3">
+              CONTACT US
+            </a>
+          </div>
         </div>
         <div class="image-container-3">
-          <img src={appLogo} alt="App Logo" className="app-logo" />
+          <img src={boiler1} alt="App Logo" class="image-3" />
         </div>
       </div>
 
       <div class="content-4">
         <div class="text-container-4">
+          <h1>Your can rely on us</h1>
+
+          <ul>
+            <li>Experienced company</li>
+            <li>Great reputation</li>
+            <li>Impartial advice</li>
+            <li>Skilled engineers</li>
+            <li>Wide service area</li>
+            <li>Impartial advice</li>
+          </ul>
           <h1>
-            Do you qualify for a <br /> new boiler?
+            Contact Northeast <br /> Insulation Services to
+            <br /> find our more about <br />
+            the government’s free <br />
+            boiler replacement
+            <br /> scheme
           </h1>
-          <p>The answer to this is yes if:</p>
-          <ul>
-            <li>You are a homeowner or renting</li>
-            <li>You are receiving benefits</li>
-            <li>Your boiler is more than 10-years old</li>
-          </ul>
-          <p>Benefits include:</p>
-          <ul>
-            <li>Income Related ESA</li>
-            <li>Pension Credit Guarantee</li>
-            <li>Income Based JSA</li>
-            <li>Universal Credit</li>
-            <li>Child Benefit</li>
-            <li>Housing Benefit</li>
-          </ul>
+          <div className="buttons-container-4">
+            <button className="button-4" onClick={() => scrollToContent1()}>
+              {" "}
+              COMPLETE THE GRANT FORM
+            </button>
+          </div>
         </div>
         <div class="image-container-4">
-          <img src={appLogo} alt="App Logo" className="app-logo" />
+          <img src={appLogo} alt="App Logo" class="image-4" />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

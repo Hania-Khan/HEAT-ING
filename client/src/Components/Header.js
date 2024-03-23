@@ -42,7 +42,7 @@ function Header() {
 
         <div className="logo-container">
           <img src={appLogo} alt="App Logo" className="app-logo" />
-          <h1>HEAT-ING</h1>
+         <p> <h1>HEAT-ING</h1>INSULATION SERVICES LTD </p>
         </div>
 
         <div className="search-bar">

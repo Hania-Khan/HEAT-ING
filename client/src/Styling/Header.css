@@ -1,161 +1,178 @@
 /* App.css */
 .app-container {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* This ensures the header stays on top of other elements */
-  }
-  
-  .header {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5px 260px;
-    margin-top: -90px;
-    
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column; /* Display contact info in a column */
-    align-items: center; /* Center horizontally */
-    margin-bottom: 5px; /* Add some margin below the contact box */
-    margin-top: 55px;
-  }
-  
-  .contact-circle {
-    width: 150px;
-    height: 40px;
-    border-radius: 25px;
-    background-color: #3f8fbd;
-    border: 2px solid #3f8fbd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .contact-circle:hover {
-    background-color: #d5a141;
-    border-color: #3f8fbd;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    margin-top: 10px; /* Add some margin above the social icons */
-  }
-  
-  .social-icon {
-    margin: 0 5px; /* Add margin around social icons */
-    width: 40px; /* Reduce width of social icons */
-  }
-  
-  
-  .search-bar {
-    width: 140px;
-    height: 40px;
-    border-radius: 25px;
-    background-color: #3f8fbd;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    transition: background-color 0.3s;
-    margin-top: 45px;
-  }
-  
-  .search-bar:hover {
-    background-color: #d5a141;
-    border-color: #3f8fbd;
-  }
-  
-  .search-bar input {
-    border: none;
-    background-color: transparent;
-    color: black; /* Change text color to black */
-    flex: 1;
-    margin-right: 5px;
-    outline: none; /* Remove outline on focus */
-  }
-  
-  /* Change placeholder color to black */
-  .search-bar input::placeholder {
-    color: black;
-  }
-  
-  /* Adjust icon size */
-  .search-bar .input-group-text {
-    font-size: 1rem;
-  }
-  
-  /* Adjust icon color */
-  .search-bar .input-group-text i {
-    color: rgb(205, 189, 189);
-  }
-  
-  
-  
-  .main-content {
-    text-align: center;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center; /* Center vertically */
-    margin-top: 10px;
-  }
-  
-  .app-logo {
-    width: 200px;
-    height: 250px;
-    margin-right: -50px; /* Add some space between logo and text */
-  }
-  
-  h1 {
-    margin: 0; /* Remove default margin */
-  }
-  
-  .yellow-ribbon {
-    background-color: #3f8fbd;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-top: -55px;
-    border-top: 1px solid #ccc; /* Add border at the top */
-  }
-  
-  .ribbon-column {
-    color: black;
-    transition: text-decoration 0.3s;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #3f8fbd;
-    cursor: pointer;
-    position: relative; /* Add position relative for pseudo-element */
-  }
-  
-  .ribbon-column:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right:100px; /* Adjust the position to align with the border */
-    height: 100%;
-    width: 1px; /* Width of the separator */
-    background-color: black; /* Color of the separator */
-  }
-  
-  .ribbon-column:hover {
-    text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* This ensures the header stays on top of other elements */
+}
 
-    color: orange;
-  }
-  
-  
- 
-  .ribbon-column:last-child {
-    border-right: none;
-  }
-  
+.header {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5px 260px;
+  margin-top: -90px;
+
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  /* Display contact info in a column */
+  align-items: center;
+  /* Center horizontally */
+  margin-bottom: 5px;
+  /* Add some margin below the contact box */
+  margin-top: 55px;
+}
+
+.contact-circle {
+  width: 150px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #6295c7;
+  border: 2px solid #6295c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-circle:hover {
+  background-color: #d5a141;
+  border-color: #6295c7;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  margin-top: 10px;
+  /* Add some margin above the social icons */
+}
+
+.social-icon {
+  margin: 0 5px;
+  /* Add margin around social icons */
+  width: 40px;
+  /* Reduce width of social icons */
+}
+
+
+.search-bar {
+  width: 140px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #6295c7;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  transition: background-color 0.3s;
+  margin-top: 45px;
+}
+
+.search-bar:hover {
+  background-color: #d5a141;
+  border-color: #6295c7;
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  color: black;
+  /* Change text color to black */
+  flex: 1;
+  margin-right: 5px;
+  outline: none;
+  /* Remove outline on focus */
+}
+
+/* Change placeholder color to black */
+.search-bar input::placeholder {
+  color: black;
+}
+
+/* Adjust icon size */
+.search-bar .input-group-text {
+  font-size: 1rem;
+}
+
+/* Adjust icon color */
+.search-bar .input-group-text i {
+  color: rgb(205, 189, 189);
+}
+
+
+
+.main-content {
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  /* Center vertically */
+  margin-top: 10px;
+}
+
+.app-logo {
+  width: 200px;
+  height: 250px;
+  margin-right: -50px;
+  /* Add some space between logo and text */
+}
+
+h1 {
+  margin: 0;
+  /* Remove default margin */
+}
+
+.yellow-ribbon {
+  background-color: #6295c7;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: -55px;
+  border-top: 1px solid #ccc;
+  /* Add border at the top */
+}
+
+.ribbon-column {
+  color: black;
+  transition: text-decoration 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #6295c7;
+  cursor: pointer;
+  position: relative;
+  /* Add position relative for pseudo-element */
+}
+
+.ribbon-column:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100px;
+  /* Adjust the position to align with the border */
+  height: 100%;
+  width: 1px;
+  /* Width of the separator */
+  background-color: black;
+  /* Color of the separator */
+}
+
+.ribbon-column:hover {
+  text-decoration: underline;
+
+  color: orange;
+}
+
+
+
+.ribbon-column:last-child {
+  border-right: none;
+}
