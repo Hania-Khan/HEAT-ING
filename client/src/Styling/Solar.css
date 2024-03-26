@@ -42,13 +42,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
   max-width: 800px;
-  padding: 20px;
+  padding: 70px;
   text-align: left;
   animation: slideInFromRight 2s ease-out;
   animation-fill-mode: forwards;
   visibility: hidden;
+  /* font-size: px; */
+}
+
+.text-container h1 {
+  font-size: 60px;
 }
 
 .buttons-container {
@@ -167,7 +172,7 @@ select {
 }
 
 .button-2 {
-  width: 150px;
+  width: 250px;
   /* Set the width */
   height: 40px;
   /* Set the height */
@@ -180,7 +185,6 @@ select {
   color: white;
   /* Set the text color */
   font-weight: bold;
-  /* Set font weight */
   cursor: pointer;
   /* Set cursor */
   display: flex;
@@ -244,8 +248,8 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100%;
   padding: 20px;
   text-align: left;
   animation: slideInFromRight 2s ease-out;
@@ -254,22 +258,25 @@ select {
 
 }
 
+.text-container-2 h1 {
+  font-size: 30px;
+}
 
 .image-container-2 {
-  width: 100%;
-  height: 200%;
+  width: 25%;
+  height: 25%;
 }
 
 .image-container-2 img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 25%;
+  max-height: 25%;
   animation: popout 10s ease forwards;
 
 }
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(60%);
     visibility: visible;
   }
 
@@ -340,7 +347,7 @@ select {
   max-width: 100%;
   max-height: 100%;
   animation: popout 8s ease forwards;
-  
+
 }
 
 @keyframes popout {
@@ -487,4 +494,132 @@ select {
   background-color: #d5a141;
   border-color: #6295c7;
   text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.content-5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px;
+  margin-top: -170px;
+  background-color: #ffffff;
+}
+
+.content-5 h1 {
+  color: #327ebc;
+  /* Change to the color you want */
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.text-container-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: left;
+  animation: slideInFromRight 2s ease-out;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+
+}
+
+.image-container-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  height: 100%;
+  /* Adjust this value as needed */
+}
+
+.image-container-5 img {
+  max-width: 100%;
+  max-height: 100%;
+  animation: popout 1s ease forwards;
+}
+
+@keyframes popout {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.buttons-container-5 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.button-5 {
+  width: 250px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #6295c7;
+  border: 2px solid #6295c7;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 50px; */
+  margin-top: 20px;
+  margin-left: 0;
+  text-decoration: none;
+  font-weight: normal;
+
+}
+
+.button-5:hover {
+  background-color: #d5a141;
+  border-color: #6295c7;
+  text-decoration: none;
+}
+
+
+
+.form-container-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 200%;
+  background-color: #6295c7;
+  /* replace with your preferred color */
+  padding: 20px;
+  /* add some padding */
+  border-radius: 10px;
+  /* optional: round the corners */
+  /* your styles */
+  border-color: #064f7a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 200%;
 }

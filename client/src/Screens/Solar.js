@@ -1,13 +1,12 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import "../Styling/Solar.css";
+import "../Styling/AboutUs.css";
 import React, { useState } from "react";
 import LottieAnimation from "./lottie";
 import appLogo from "../img/app-logo.png";
 import boiler1 from "../img/boiler1.jpg";
 import boiler from "../img/boiler.png";
 import { Link } from "react-router-dom";
-
 function Solar() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
@@ -24,8 +23,10 @@ function Solar() {
   const [postcode, setPostcode] = useState("");
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
-  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleNext = (event) => {
     event.preventDefault();
@@ -65,39 +66,21 @@ function Solar() {
       <Header />
       <div className="content-1">
         <div className="text-container">
-          <LottieAnimation />
-          <p
-            style={{
-              fontSize: "2.5em",
-              fontWeight: "bold",
-              color: "blck",
-            }}
-          >
-            Fully funded solutions to
-            <br />
-            improve your home's <br />
-            energy efficiency - get <br />
-            your FREE boiler today. <br />
-          </p>
+          <h1>
+            Harness the <br />
+            energy of the sun <br />
+            to power your <br />
+            home
+          </h1>
+
           <p>
-            Under the boiler replacement scheme, many homeowners <br /> now have
-            the opportunity to receive a brand new boiler
-            <br /> under the government’s free boiler replacement scheme.
-            <br /> This scheme is 100% government backed as detailed on <br />
-            the official GOV.UK website.
+            Take a step towards energy independence with solar <br /> panels.
+            Sunderland-based North East Insulation Services <br /> can help.
           </p>
-          <p>
-            Sunderland based North East Insulation Services Ltd can <br />
-            help with the application process, working with <br />
-            homeowners locally and nationally. Our experienced team <br />
-            can also help with the installation of your new boiler, it’s all{" "}
-            <br />
-            part of the service. If you are interested in finding out <br />
-            more, just get in touch.
-          </p>
-          <div className="buttons-container">
-            <button className="button">Boiler Installations</button>
-            <button className="button">0191 6804575</button>
+          <div className="buttons-container-2">
+            <a href="/contact-us" className="button-2">
+              GET IN TOUCH
+            </a>
           </div>
         </div>
 
@@ -559,86 +542,145 @@ function Solar() {
         </div>
       </div>
 
-      <div class="content-2">
-        <div class="image-container-2">
-          <img src={boiler} alt="App Logo" class="image-2" />
-        </div>
-        <div class="text-container-2">
+      <div className="content-2">
+        <div className="text-container-2">
           <h1>
-            Do you qualify for a <br /> new boiler?
-          </h1>
-          <p>The answer to this is yes if:</p>
-          <ul>
-            <li>You are a homeowner or renting</li>
-            <li>You are receiving benefits</li>
-            <li>Your boiler is more than 10-years old</li>
-          </ul>
-          <p>Benefits include:</p>
-          <ul>
-            <li>Income Related ESA</li>
-            <li>Pension Credit Guarantee</li>
-            <li>Income Based JSA</li>
-            <li>Universal Credit</li>
-            <li>Child Benefit</li>
-            <li>Housing Benefit</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="content-3">
-        <div class="text-container-3">
-          <h1>
-            Free boiler
-            <br /> replacement <br />
-            schemes
+            Generate power
+            <br /> from sunlight all <br />
+            day long
           </h1>
           <p>
-            Sunderland based North East Insulation <br />
-            Services Ltd can advise you how to take
-            <br /> advantage of the government's free boiler <br />
-            replacement scheme.
+            Are you fed up with large energy bills? Concerned about <br />
+            the harm that fossil fuels are doing to the environment? <br />
+            You aren’t alone in that. With energy bills soaring, and <br />
+            environmental concerns always in the news, many people <br />
+            are looking for ways to reduce their dependence on the big <br />
+            power companies. Solar power is a great option for many <br />
+            homes. You can generate power to use in your home, and <br />
+            if you generate more than you need, you can even sell the
+            <br /> excess back to the National Grid! If that sounds good, get{" "}
+            <br />
+            in touch..
           </p>
-          <div className="buttons-container-3">
-            <a href="/contact-us" className="button-3">
-              CONTACT US
+          <div className="buttons-container-2">
+            <a href="/faqs" className="button-2">
+              GRANTS
             </a>
           </div>
         </div>
-        <div class="image-container-3">
-          <img src={boiler1} alt="App Logo" class="image-3" />
-        </div>
+
+        {/* <div className="image-container-2">
+          <img src={boiler1} alt="App Logo" className="image-2" />
+        </div> */}
+        <LottieAnimation />
       </div>
 
-      <div class="content-4">
-        <div class="text-container-4">
-          <h1>Your can rely on us</h1>
+      <div className="content-3">
+        <div className="text-container-3">
+          <h1>
+            How do solar panels <br /> work?
+          </h1>
+          <p>
+            The short version is that solar panels work by collecting sunlight
+            and converting its light and heat energy into electrical energy,
+            stored in a battery unit. It’s a simple, elegant system that uses a
+            renewable resource to generate power that you can use even when the
+            sun isn’t shining. It’s a fantastic option for many people.
+          </p>
+          <p>
+            In addition to the obvious benefits of no longer being reliant on
+            fossil fuels, and therefore doing your bit to help the environment,
+            there’s another huge reason to choose solar power for your home – it
+            can save you money! Solar energy can reduce your consumption of
+            power from the National Grid, leading to lower energy bills, as well
+            as lower carbon emissions. It’s a win-win situation.
+          </p>
+          <p>
+            Even better than that, there are grants available for people looking
+            to install solar panels – we can help you find out if you’re
+            eligible.
+          </p>
+        </div>
+      </div>
+      <div className="content-4">
+        <div className="text-container-4">
+          <h1>Our certifications and memberships include:</h1>
 
           <ul>
-            <li>Experienced company</li>
-            <li>Great reputation</li>
-            <li>Impartial advice</li>
-            <li>Skilled engineers</li>
+            <li>Ocean Certification</li>
+            <li>PAS2030 Certification</li>
+            <li>TrustMark</li>
+            <li>Domestic Energy Assessor</li>
             <li>Wide service area</li>
-            <li>Impartial advice</li>
+            <li>Accreditation Scheme</li>
           </ul>
-          <h1>
-            Contact Northeast <br /> Insulation Services to
-            <br /> find our more about <br />
-            the government’s free <br />
-            boiler replacement
-            <br /> scheme
-          </h1>
-          <div className="buttons-container-4">
-            <button className="button-4" onClick={() => scrollToContent1()}>
-              {" "}
-              COMPLETE THE GRANT FORM
-            </button>
+        </div>
+        {/* <div className="image-container-4">
+            <img src={appLogo} alt="App Logo" className="image-4" />
+          </div> */}
+      </div>
+
+      <div className="content-5">
+        <div className="form-container-5">
+          <form>
+            <>
+              <h1>Send us a message</h1>
+              <label>Name *</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <label>Email *</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="e.g., email@example.com"
+                pattern="[0-9]{4,17}"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <label>Subject</label>
+              <input
+                type="text"
+                name="subject"
+                placeholder="e.g., Support"
+                onChange={(e) => setSubject(e.target.value)}
+                required
+              />
+              <label>Your Meassage</label>
+              <input
+                type="text"
+                name="meassage"
+                placeholder="Enter Text here"
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </>
+          </form>
+          <div className="buttons-container-2">
+            <button className="button-2">SEND MESSAGE</button>
           </div>
         </div>
-        <div class="image-container-4">
-          <img src={appLogo} alt="App Logo" class="image-4" />
+        <div className="text-container-5">
+          <h1>
+            To find out more
+            <br /> about what solar <br />
+            panels can do for you,
+            <br /> contact North East <br />
+            Insulation Services.
+          </h1>
+
+          <div className="buttons-container-5">
+            <a href="/" className="button-5">
+              APPLY FOR FUNDING
+            </a>
+          </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

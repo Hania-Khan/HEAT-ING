@@ -6,7 +6,10 @@ import LottieAnimation from "./lottie";
 import appLogo from "../img/app-logo.png";
 import boiler1 from "../img/boiler1.jpg";
 import boiler from "../img/boiler.png";
+import HomePage from "../img/HomePage.mp4";
+import Flame from "../img/Flame.mp4";
 import { Link } from "react-router-dom";
+
 function Home() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
@@ -59,12 +62,19 @@ function Home() {
     }
   }
 
+  
   return (
     <div>
       <Header />
+      <video autoplay muted loop id="myVideo">
+  <source src="../img/Flame.mp4" type="video/mp4"/>
+</video>
+
       <div className="content-1">
+       
+
         <div className="text-container">
-          <LottieAnimation />
+          {/* <LottieAnimation /> */}
           <p
             style={{
               fontSize: "2.5em",
@@ -558,11 +568,11 @@ function Home() {
         </div>
       </div>
 
-      <div class="content-2">
-        <div class="image-container-2">
-          <img src={boiler} alt="App Logo" class="image-2" />
+      <div className="content-2">
+        <div className="image-container-2">
+          <img src={boiler} alt="App Logo" className="image-2" />
         </div>
-        <div class="text-container-2">
+        <div className="text-container-2">
           <h1>
             Do you qualify for a <br /> new boiler?
           </h1>
@@ -584,8 +594,8 @@ function Home() {
         </div>
       </div>
 
-      <div class="content-3">
-        <div class="text-container-3">
+      <div className="content-3" style={{ backgroundColor: "#839fb5" }}>
+        <div className="text-container-3">
           <h1>
             Free boiler
             <br /> replacement <br />
@@ -603,13 +613,13 @@ function Home() {
             </a>
           </div>
         </div>
-        <div class="image-container-3">
-          <img src={boiler1} alt="App Logo" class="image-3" />
+        <div className="image-container-3">
+          <img src={boiler1} alt="App Logo" className="image-3" />
         </div>
       </div>
 
-      <div class="content-4">
-        <div class="text-container-4">
+      <div className="content-4">
+        <div className="text-container-4">
           <h1>Your can rely on us</h1>
 
           <ul>
@@ -634,11 +644,11 @@ function Home() {
             </button>
           </div>
         </div>
-        <div class="image-container-4">
-          <img src={appLogo} alt="App Logo" class="image-4" />
+        <div className="image-container-4">
+          <img src={boiler} alt="App Logo" className="image-4" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -55,7 +55,7 @@ function Header() {
 
       <div className="main-content">
           <div className="yellow-ribbon">
-          <div className="ribbon-column"></div> {/* Empty placeholder */}
+          <div className="ribbon-column"></div>
           <div className="ribbon-column" onClick={() => navigateTo("/")}>
             Home
           </div>
@@ -71,7 +71,7 @@ function Header() {
           <div className="ribbon-column" onClick={() => navigateTo("/contact")}>
             Contact
           </div>
-          <div className="ribbon-column"></div> {/* Empty placeholder */}
+          <div className="ribbon-column"></div> 
         </div>
       </div>
     </div>
@@ -79,3 +79,7 @@ function Header() {
 }
 
 export default Header;
+
+
+
+

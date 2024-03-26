@@ -72,11 +72,7 @@ function Contact() {
               color: "blck",
             }}
           >
-            Fully funded solutions to
-            <br />
-            improve your home's <br />
-            energy efficiency - get <br />
-            your FREE boiler today. <br />
+            CONTACT
           </p>
           <p>
             Under the boiler replacement scheme, many homeowners <br /> now have

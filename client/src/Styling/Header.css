@@ -6,7 +6,6 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  /* This ensures the header stays on top of other elements */
 }
 
 .header {
@@ -22,11 +21,8 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  /* Display contact info in a column */
   align-items: center;
-  /* Center horizontally */
   margin-bottom: 5px;
-  /* Add some margin below the contact box */
   margin-top: 55px;
 }
 
@@ -34,7 +30,7 @@
   width: 150px;
   height: 40px;
   border-radius: 25px;
-  background-color: #6295c7;
+  background-color: #839fb5;
   border: 2px solid #6295c7;
   display: flex;
   justify-content: center;
@@ -50,16 +46,12 @@
 .social-icons {
   display: flex;
   justify-content: center;
-  /* Center horizontally */
   margin-top: 10px;
-  /* Add some margin above the social icons */
 }
 
 .social-icon {
   margin: 0 5px;
-  /* Add margin around social icons */
   width: 40px;
-  /* Reduce width of social icons */
 }
 
 
@@ -67,7 +59,7 @@
   width: 140px;
   height: 40px;
   border-radius: 25px;
-  background-color: #6295c7;
+  background-color: #839fb5;
   display: flex;
   align-items: center;
   padding: 0 10px;
@@ -132,7 +124,7 @@ h1 {
 }
 
 .yellow-ribbon {
-  background-color: #6295c7;
+  background-color: #839fb5;
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -146,7 +138,7 @@ h1 {
   transition: text-decoration 0.3s;
   padding: 5px;
   border-radius: 5px;
-  background-color: #6295c7;
+  background-color: #839fb5;
   cursor: pointer;
   position: relative;
   /* Add position relative for pseudo-element */
