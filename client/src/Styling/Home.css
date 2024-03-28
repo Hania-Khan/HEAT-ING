@@ -102,7 +102,7 @@
   justify-content: space-between;
   width: 50%;
   height: 100%;
-  background-color:#839fb5;
+  background-color: #839fb5;
   padding: 20px;
   border-radius: 10px;
   border-color: #9a9a9a;
@@ -438,6 +438,12 @@ select {
 }
 
 .buttons-container-4 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.buttons-container-4-1 {
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;

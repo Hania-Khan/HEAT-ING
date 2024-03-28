@@ -62,17 +62,14 @@ function Home() {
     }
   }
 
-  
   return (
     <div>
       <Header />
       <video autoplay muted loop id="myVideo">
-  <source src="../img/Flame.mp4" type="video/mp4"/>
-</video>
+        <source src="../img/Flame.mp4" type="video/mp4" />
+      </video>
 
       <div className="content-1">
-       
-
         <div className="text-container">
           {/* <LottieAnimation /> */}
           <p
@@ -643,9 +640,21 @@ function Home() {
               COMPLETE THE GRANT FORM
             </button>
           </div>
-        </div>
-        <div className="image-container-4">
-          <img src={boiler} alt="App Logo" className="image-4" />
+          <h1> LOCATIONS </h1>
+          <div className="buttons-container-4-1">
+            <a href="/glasgow" className="button-4">
+              GLASGOW
+            </a>
+            <a href="/edinburgh" className="button-4">
+              EDINBURGH
+            </a>
+            <a href="/durham" className="button-4">
+              DURHAM
+            </a>
+            <a href="/leeds" className="button-4">
+              LEEDS
+            </a>
+          </div>
         </div>
       </div>
       <Footer />

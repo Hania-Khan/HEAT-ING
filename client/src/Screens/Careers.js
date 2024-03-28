@@ -2,11 +2,6 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../Styling/AboutUs.css";
 import React, { useState } from "react";
-import LottieAnimation from "./lottie";
-import appLogo from "../img/app-logo.png";
-import boiler1 from "../img/boiler1.jpg";
-import boiler from "../img/boiler.png";
-import { Link } from "react-router-dom";
 function Careers() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");

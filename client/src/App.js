@@ -7,6 +7,11 @@ import Careers from "./Screens/Careers";
 import Contact from "./Screens/Contact";
 import Solar from "./Screens/Solar";
 import FAQs from "./Screens/FAQs";
+import Glasgow from "./Screens/Glasgow";
+import Leeds from "./Screens/Leeds";
+import Edinburgh from "./Screens/Edinburgh";
+import Durham from "./Screens/Durham";
+
 function App() {
   return (
     <Router>
@@ -17,12 +22,15 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/solar" element={<Solar />} />
-          <Route path="/faqs" element={<FAQs/>}/>
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/glasgow" element={<Glasgow />} />
+          <Route path="/leeds" element={<Leeds />} />
+          <Route path="/edinburgh" element={<Edinburgh />} />
+          <Route path="/durham" element={<Durham />} />
         </Routes>
       </div>
     </Router>
   );
 }
-
 
 export default App;
