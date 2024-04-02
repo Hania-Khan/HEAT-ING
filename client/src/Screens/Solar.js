@@ -78,7 +78,7 @@ function Solar() {
             Sunderland-based North East Insulation Services <br /> can help.
           </p>
           <div className="buttons-container-2">
-            <a href="/contact-us" className="button-2">
+            <a href="/contact" className="button-2">
               GET IN TOUCH
             </a>
           </div>

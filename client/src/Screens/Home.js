@@ -8,6 +8,7 @@ import boiler1 from "../img/boiler1.jpg";
 import boiler from "../img/boiler.png";
 import HomePage from "../img/HomePage.mp4";
 import Flame from "../img/Flame.mp4";
+import Drilling from "../img/drillingWall.mp4";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -28,6 +29,8 @@ function Home() {
   const [dob, setDob] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [incomeSupport, setIncomeSupport] = useState(false);
+  const [taxCredits, setTaxCredits] = useState(false);
 
   const handleNext = (event) => {
     event.preventDefault();
@@ -52,7 +55,13 @@ function Home() {
   };
 
   const handleBack = () => {
-    setStep(step - 1);
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
+
+  const handleChange = (event, setter) => {
+    setter(event.target.value);
   };
 
   function scrollToContent1() {
@@ -62,17 +71,15 @@ function Home() {
     }
   }
 
-  
   return (
-    <div>
+    <div className="home-container">
       <Header />
-      <video autoplay muted loop id="myVideo">
-  <source src="../img/Flame.mp4" type="video/mp4"/>
-</video>
+      {/* <video src={Flame} autoPlay loop muted /> */}
+      <video autoPlay loop muted id="myVideo" width="100%" height="100%">
+        <source src={Drilling} type="video/mp4" />
+      </video>
 
       <div className="content-1">
-       
-
         <div className="text-container">
           {/* <LottieAnimation /> */}
           <p
@@ -105,7 +112,10 @@ function Home() {
             more, just get in touch.
           </p>
           <div className="buttons-container">
-            <button className="button">Boiler Installations</button>
+            {/* <button className="button">Boiler Installations</button> */}
+            <a href="/contact" className="button">
+              Boiler Installations
+            </a>
             <button className="button">0191 6804575</button>
           </div>
         </div>
@@ -126,7 +136,8 @@ function Home() {
                 Which Region of the UK Do You Live?*
                 <select
                   value={region}
-                  onChange={(e) => setRegion(e.target.value)}
+                  // onChange={(e) => setRegion(e.target.value)}
+                  onChange={(e) => handleChange(e, setRegion)}
                   required
                 >
                   <option value="">Select...</option>
@@ -173,9 +184,11 @@ function Home() {
                           name="benefits"
                           className="checkbox-button"
                           value="Income Support"
-                          onChange={(e) =>
-                            setIsCheckboxCheckedStep2(e.target.checked)
-                          }
+                          // onChange={(e) =>
+                          //   setIsCheckboxCheckedStep2(e.target.checked)
+                          // }
+                          checked={incomeSupport}
+                          onChange={(e) => setIncomeSupport(e.target.checked)}
                         />
                         <label htmlFor="income-support">Income Support</label>
                       </div>
@@ -186,9 +199,11 @@ function Home() {
                           name="benefits"
                           value="Tax Credits"
                           className="checkbox-button"
-                          onChange={(e) =>
-                            setIsCheckboxCheckedStep2(e.target.checked)
-                          }
+                          // onChange={(e) =>
+                          //   setIsCheckboxCheckedStep2(e.target.checked)
+                          // }
+                          checked={taxCredits}
+                          onChange={(e) => setTaxCredits(e.target.checked)}
                         />
                         <label htmlFor="tax-credits">Tax Credits</label>
                       </div>
@@ -608,7 +623,7 @@ function Home() {
             replacement scheme.
           </p>
           <div className="buttons-container-3">
-            <a href="/contact-us" className="button-3">
+            <a href="/contact" className="button-3">
               CONTACT US
             </a>
           </div>
@@ -648,6 +663,7 @@ function Home() {
           <img src={boiler} alt="App Logo" className="image-4" />
         </div>
       </div>
+
       <Footer />
     </div>
   );

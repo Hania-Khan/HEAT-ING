@@ -78,7 +78,7 @@ function AboutUs() {
             <br /> save money on your energy bills.
           </p>
           <div className="buttons-container-2">
-            <a href="/contact-us" className="button-2">
+            <a href="/contact" className="button-2">
               GET IN TOUCH
             </a>
           </div>

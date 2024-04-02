@@ -78,7 +78,7 @@ function Careers() {
             recruiting talented individuals.
           </p>
           <div className="buttons-container-2">
-            <a href="/contact-us" className="button-2">
+            <a href="/contact" className="button-2">
               CONTACT US
             </a>
           </div>

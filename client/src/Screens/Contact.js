@@ -594,7 +594,7 @@ function Contact() {
             replacement scheme.
           </p>
           <div className="buttons-container-3">
-            <a href="/contact-us" className="button-3">
+            <a href="/contact" className="button-3">
               CONTACT US
             </a>
           </div>
