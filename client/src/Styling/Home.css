@@ -1,34 +1,9 @@
 /* Home.css */
-/* 
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
-.home-container {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.content-1,
-.content-2,
-.content-3,
-.content-4 {
-  position: relative;
-  z-index: 1;
 }
 
 .content-1 {
@@ -43,14 +18,13 @@
   height: 100vh; */
 }
 
-/* 
 #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-} */
+}
 
 @keyframes slideInFromRight {
   0% {
@@ -86,7 +60,7 @@
 }
 
 .button {
-  width: 150px;
+  width: 90px;
   height: 40px;
   border-radius: 25px;
   background-color: #839fb5;
@@ -113,7 +87,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background-color: #839fb5;
   padding: 20px;
@@ -124,7 +98,10 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
+  width: 100%;
+  margin: auto;
 }
 
 button {
@@ -169,25 +146,9 @@ select {
   justify-content: center;
   margin-top: 20px;
 }
-.lottie-container {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  height: calc(100% - 50px);
-  z-index: -1;
-}
-
-.text-container,
-.form-container {
-  position: relative;
-  z-index: 1;
-}
-
-
-
 
 .button-2 {
-  width: 150px;
+  width: 70px;
   height: 40px;
   border-radius: 25px;
   background-color: #064f7a;
@@ -209,6 +170,21 @@ select {
   text-decoration: none;
 }
 
+
+.lottie-container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100% - 50px);
+  z-index: -1;
+}
+
+.text-container,
+.form-container {
+  position: relative;
+  z-index: 1;
+  /* Ensure content appears above the Lottie animation */
+}
 
 .content-2 {
   display: flex;
@@ -281,6 +257,7 @@ select {
   align-items: center;
   padding: 50px;
   margin-top: -300px;
+  /* background-color: #839fb5; */
 }
 
 @keyframes slideInFromRight {
@@ -306,6 +283,7 @@ select {
   animation: slideInFromRight 2s ease-out;
   animation-fill-mode: forwards;
   visibility: hidden;
+  /* background-color: #839fb5; */
 }
 
 
@@ -316,6 +294,7 @@ select {
   justify-content: space-between;
   width: 50%;
   height: 50%;
+  /* object-fit: contain; */
 
 }
 
@@ -323,6 +302,7 @@ select {
   max-width: 50%;
   max-height: 50%;
   animation: popout 1s ease forwards;
+  /* object-fit: contain; */
 
 }
 
@@ -356,6 +336,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: 0 50px; */
   margin-top: 20px;
   margin-left: 0;
   text-decoration: none;
@@ -385,6 +366,7 @@ select {
 
 .content-4 h1 {
   color: #064f7a;
+  /* Change to the color you want */
 }
 
 @keyframes slideInFromRight {
@@ -419,6 +401,7 @@ select {
   justify-content: space-between;
   width: 50%;
   height: 50%;
+  /* Adjust this value as needed */
 }
 
 .image-container-4 img {
@@ -461,6 +444,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: 0 50px; */
   margin-top: 20px;
   margin-left: 0;
   text-decoration: none;

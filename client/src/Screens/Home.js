@@ -65,9 +65,9 @@ function Home() {
   return (
     <div>
       <Header />
-      <video autoplay muted loop id="myVideo">
+      {/* <video autoplay muted loop id="myVideo">
         <source src="../img/Flame.mp4" type="video/mp4" />
-      </video>
+      </video> */}
 
       <div className="content-1">
         <div className="text-container">
