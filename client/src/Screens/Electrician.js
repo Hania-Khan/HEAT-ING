@@ -8,12 +8,44 @@ import boiler1 from "../img/boiler1.jpg";
 import boiler from "../img/boiler.png";
 import { Link } from "react-router-dom";
 function Electrician() {
-
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
- 
+
+  const handleSubmitMessage = async (event) => {
+    event.preventDefault();
+
+    // Form data based on your state variables
+    const formData = {
+      name,
+      email,
+      subject,
+      message, // Make sure you have state for this and it's updated correctly
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message); // Or any other notification mechanism
+        alert("Message sent successfully!");
+        // Optionally reset form state here
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Submission error: " + error.message);
+    }
+  };
   return (
     <div>
       <Header />
@@ -125,7 +157,13 @@ function Electrician() {
             </>
           </form>
           <div className="buttons-container">
-            <button className="button">SEND MESSAGE</button>
+            <button
+              type="button"
+              className="button"
+              onClick={handleSubmitMessage}
+            >
+              SEND MESSAGE
+            </button>
           </div>
         </div>
         <div className="text-container-5">
