@@ -547,7 +547,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60%;
+    width: 40%;
     height: 200%;
     background-color: #6295c7;
     /* replace with your preferred color */

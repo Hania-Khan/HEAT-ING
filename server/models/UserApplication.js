@@ -1,6 +1,4 @@
-// models/UserApplication.js
-
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const userApplicationSchema = new mongoose.Schema({
   region: { type: String, required: true },
@@ -20,4 +18,6 @@ const userApplicationSchema = new mongoose.Schema({
   email: { type: String, required: true },
 });
 
-mongoose.model("UserApplication", userApplicationSchema);
+
+export const UserApplication = mongoose.model("UserApplication", userApplicationSchema);
+

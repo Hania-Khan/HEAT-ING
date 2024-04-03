@@ -267,7 +267,7 @@ select {
 
 
 .content-2 h1 {
-  color: #6295c7;
+  color: #061b30;
 }
 
 .text-container-2 {
@@ -557,7 +557,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60%;
+  width: 40%;
   height: 200%;
   background-color: #6295c7;
   /* replace with your preferred color */

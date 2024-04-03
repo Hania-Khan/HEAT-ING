@@ -7,13 +7,15 @@ import appLogo from "../img/app-logo.png";
 import boiler1 from "../img/boiler1.jpg";
 import boiler from "../img/boiler.png";
 import { Link } from "react-router-dom";
-function AboutUs() {
+function Boiler() {
+
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (event) => {
+
+  const handleSubmitMessage = async (event) => {
     event.preventDefault();
 
     // Form data based on your state variables
@@ -47,20 +49,20 @@ function AboutUs() {
     }
   };
 
+
   return (
     <div>
       <Header />
       <div className="content-1">
         <div className="text-container">
           <h1>
-            10 years’ experience
-            <br /> in house insulation
+            Free cavity wall
+            <br /> insulation and <br /> installation
           </h1>
 
           <p>
-            Working in homes and businesses across the UK, North
-            <br /> East Insulation Services is the team to rely on to help you
-            <br /> save money on your energy bills.
+            North East Insulation Services specialises in the ECO4 scheme. Based
+            in Sunderland, we provide insulation services nationwide.
           </p>
           <div className="buttons-container-2">
             <a href="/contact" className="button-2">
@@ -73,9 +75,9 @@ function AboutUs() {
       <div className="content-2">
         <div className="text-container-2">
           <h1>
-            Saving you money
-            <br /> whilst warming <br />
-            your home
+            Cavity wall insulation
+            <br /> for homeowners and <br />
+            landlords
           </h1>
           <p>
             North East Insulation Services is run by a father and son
@@ -84,6 +86,44 @@ function AboutUs() {
             <br /> customer service first. We've earned a great reputation{" "}
             <br />
             across the UK and look forward to working with you.
+          </p>
+          <div className="buttons-container-2">
+            <a href="/apply-for-grants-or-funding" className="button-2">
+              Apply for Grant
+            </a>
+          </div>
+        </div>
+
+        <div className="image-container-2">
+          <img src={boiler1} alt="App Logo" className="image-2" />
+        </div>
+      </div>
+
+      <div className="content-3">
+        <div className="text-container-3">
+          <h1>Are your walls suitable for insulation?</h1>
+          <p>
+            A cavity wall, as the name suggests, is one that has an empty space
+            between the inner and outer walls. You can usually spot a cavity
+            wall if the brickwork has an even pattern and bricks that are laid
+            lengthways.
+          </p>
+          <p>
+            The majority of homes built after the 1930s have cavity walls. If
+            you’re not sure, get in touch and we can take a look. If your walls
+            are solid then solid wall-specific insulation is also available.
+          </p>
+        </div>
+      </div>
+      <div className="content-2">
+        <div className="text-container-2">
+          <h1>Why insulate your walls?</h1>
+          <p>
+            Cavity wall insulation can reduce the amount of heat loss giving you
+            a warmer home and increased energy efficiency. It can also result in
+            less sound penetration, making your home, or a specific area of your
+            home much more soundproof! In addition to cavity wall insulation,
+            underfloor insulation and loft insulation.
           </p>
           <div className="buttons-container-2">
             <a href="/faqs" className="button-2">
@@ -97,27 +137,47 @@ function AboutUs() {
         </div>
       </div>
 
-      <div className="content-3">
-        <div className="text-container-3">
-          <h1>Our Values</h1>
-          <p>
-            North East Insulation Services focuses on our core values in
-            everything we do.
-          </p>
-        </div>
-      </div>
       <div className="content-4">
         <div className="text-container-4">
-          <h1>Our certifications and memberships include:</h1>
-
-          <ul>
-            <li>Ocean Certification</li>
-            <li>PAS2030 Certification</li>
-            <li>TrustMark</li>
-            <li>Domestic Energy Assessor</li>
-            <li>Wide service area</li>
-            <li>Accreditation Scheme</li>
-          </ul>
+          <h1>We also offer:</h1>
+          <div className="buttons-container-2">
+            <a href="/cavity-wall-insulation" className="button-2">
+              Cavity Wall Insulation
+            </a>
+            <p>Save on your heating bills with our cavity wall insulation.</p>
+          </div>
+          <div className="buttons-container-2">
+            <a href="/loft-insulation" className="button-2">
+              Loft Insulation
+            </a>
+            <p>Our loft insulation stops heat escaping out of your loft.</p>
+          </div>
+          <div className="buttons-container-2">
+            <a href="/smart-heating-controls" className="button-2">
+              Smart Heating Controls
+            </a>
+            <p>
+              Control your heating temperature and schedule with just a few taps
+              on an app.
+            </p>
+          </div>
+          <div className="buttons-container-2">
+            <a href="/underfloor-insulation" className="button-2">
+              Underfloor Insulation
+            </a>
+            <p>
+              Control your heating temperature and schedule with just a few taps
+              on an app.
+            </p>
+          </div>
+          <div className="buttons-container-2">
+            <a href="/air-source-pumps" className="button-2">
+              Air Source Pumps
+            </a>
+            <p>
+              Air source heat pumps are a new, efficient way to heat your home.
+            </p>
+          </div>
         </div>
         {/* <div className="image-container-4">
             <img src={appLogo} alt="App Logo" className="image-4" />
@@ -164,19 +224,23 @@ function AboutUs() {
             </>
           </form>
           <div className="buttons-container">
-            <button type="button" className="button" onClick={handleSubmit}>
+            <button
+              type="button"
+              className="button"
+              onClick={handleSubmitMessage}
+            >
               SEND MESSAGE
             </button>
           </div>
         </div>
-
         <div className="text-container-5">
           <h1>
-            You could get <br />
-            funding to help with <br />
-            the costs of house <br />
-            insulation. Fill in our <br />
-            form today to apply.
+            Considering cavity <br /> wall insulation for <br />
+            your home? Fill in <br />
+            North East Insulation <br />
+            Services’ funding <br />
+            form to see what help <br />
+            is available.
           </h1>
 
           <div className="buttons-container-5">
@@ -192,4 +256,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Boiler;

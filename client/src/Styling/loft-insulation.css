@@ -27,8 +27,19 @@
     }
 }
 
-ttext-container {
-    display: grid;
+/* .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    width: 50%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: left;
+  } */
+
+.text-container {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -53,7 +64,7 @@ ttext-container {
 }
 
 .button {
-    width: 200px;
+    width: 150px;
     /* Set the width */
     height: 40px;
     /* Set the height */
@@ -96,7 +107,7 @@ ttext-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
     height: 100%;
     background-color: #6295c7;
     /* replace with your preferred color */
@@ -112,7 +123,6 @@ form {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 40%;
 }
 
 button {
@@ -154,40 +164,15 @@ select {
     padding: 10px;
 }
 
-.buttons-container-2-1 {
+.buttons-container {
     display: flex;
     justify-content: center;
     /* Center the buttons horizontally */
     margin-top: 20px;
-    padding: 40px;
-}
-
-.buttons-container-2-2 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 30px;
-}
-
-.buttons-container-2-3 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 20px;
-}
-
-.buttons-container-2-4 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 10px;
 }
 
 .button-2 {
-    width: 350px;
+    width: 150px;
     /* Set the width */
     height: 40px;
     /* Set the height */
@@ -312,27 +297,7 @@ select {
     }
 }
 
-.form-container-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
 
-form {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-}
 
 
 
@@ -361,7 +326,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     max-width: 800px;
     padding: 20px;
     text-align: left;
@@ -370,6 +335,21 @@ form {
     visibility: hidden;
 }
 
+.image-container-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}
+
+.image-container-3 img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: popout 8s ease forwards;
+
+}
 
 @keyframes popout {
     from {
@@ -390,7 +370,7 @@ form {
 }
 
 .button-3 {
-    width: 200px;
+    width: 150px;
     height: 40px;
     border-radius: 25px;
     background-color: #6295c7;
@@ -418,27 +398,107 @@ form {
 
 
 
-.form-container-3 {
+
+
+.content-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px;
+    margin-top: -170px;
+    background-color: #ffffff;
+}
+
+.content-4 h1 {
+    color: #327ebc;
+    /* Change to the color you want */
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.text-container-4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
+    width: 50%;
+    max-width: 800px;
     padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
+    text-align: left;
+    animation: slideInFromRight 2s ease-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+
 }
 
-form {
+.image-container-4 {
     display: flex;
     flex-direction: column;
-    height: 200%;
+    justify-content: space-between;
+    width: 30%;
+    height: 100%;
+    /* Adjust this value as needed */
 }
+
+.image-container-4 img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: popout 1s ease forwards;
+}
+
+@keyframes popout {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.buttons-container-4 {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.button-4 {
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #6295c7;
+    border: 2px solid #6295c7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 50px; */
+    margin-top: 20px;
+    margin-left: 0;
+    text-decoration: none;
+    font-weight: normal;
+
+}
+
+.button-4:hover {
+    background-color: #d5a141;
+    border-color: #6295c7;
+    text-decoration: none;
+}
+
+
+
 
 
 
@@ -475,7 +535,7 @@ form {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    max-width: 800px;
+    max-width: 100px;
     padding: 20px;
     text-align: left;
     animation: slideInFromRight 2s ease-out;
@@ -548,14 +608,10 @@ form {
     flex-direction: column;
     justify-content: space-between;
     width: 40%;
-    height: 200%;
+    height: 100%;
     background-color: #6295c7;
-    /* replace with your preferred color */
     padding: 20px;
-    /* add some padding */
     border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
     border-color: #064f7a;
 }
 
@@ -563,4 +619,5 @@ form {
     display: flex;
     flex-direction: column;
     height: 200%;
+    width: 100%;
 }

@@ -1,28 +1,30 @@
-const express = require("express");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import { mongoUrl } from "./keys.js";
+import userApplicationRoute from "./routes/userApplication.js";
+import grantApplicationRoute from "./routes/grantApplications.js";
+import messageRoutes from "./routes/messageRoutes.js"
 const app = express();
 const PORT = 5000;
-const mongoose = require ("mongoose");
-const { mongoUrl } = require("./keys");
-const cors = require("cors");
+
 app.use(cors());
-require('./models/UserApplication');
-
 app.use(express.json());
-
-
-app.use(require('./routes/userApplication'));
-
-mongoose.connect(mongoUrl);
-
-mongoose.connection.on("connected", () => {
-  console.log("Connected to DB");
-});
-
-mongoose.connection.on("error", () => {
-  console.log("Not Connected to DB");
-});
+app.use(userApplicationRoute);
+app.use(grantApplicationRoute);
+app.use(messageRoutes);
+mongoose
+  .connect(mongoUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to DB");
+  })
+  .catch((err) => {
+    console.log("Not Connected to DB", err);
+  });
 
 app.listen(PORT, () => {
-  console.log("Server is ruuning on Port: " + PORT);
+  console.log(`Server is running on Port: ${PORT}`);
 });
-

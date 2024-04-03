@@ -1,7 +1,7 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../Styling/AboutUs.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LottieAnimation from "./lottie";
 import appLogo from "../img/app-logo.png";
 import boiler1 from "../img/boiler1.jpg";
@@ -28,6 +28,125 @@ function Solar() {
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
 
+  const handleSubmit = async () => {
+    // Collect all the form data into an object
+    const formData = {
+      region,
+      receivesBenefits,
+      benefitsReceived: selectedServices,
+      servicesRequired: selectedServices,
+      homeStatus,
+      propertyType,
+      wallMaterial,
+      heatingType,
+      heatingSystemAge,
+      houseAndStreet,
+      postcode,
+      name,
+      dob,
+      phone,
+      email,
+    };
+    // Save form data to local storage
+    localStorage.setItem("formData", JSON.stringify(formData));
+
+    try {
+      const response = await fetch("http://localhost:5000/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        alert("Application submitted successfully!");
+        console.log("Submitting form data:", formData);
+      } else {
+        throw new Error(
+          "Something went wrong while submitting your application."
+        );
+      }
+    } catch (error) {
+      console.error("Failed to submit application:", error);
+      alert("Failed to submit application.");
+    }
+  };
+  useEffect(() => {
+    // Load form data from local storage
+    const savedFormData = localStorage.getItem("formData");
+    if (savedFormData) {
+      const {
+        region,
+        receivesBenefits,
+        selectedServices,
+        homeStatus,
+        propertyType,
+        wallMaterial,
+        heatingType,
+        heatingSystemAge,
+        houseAndStreet,
+        postcode,
+        name,
+        dob,
+        phone,
+        email,
+      } = JSON.parse(savedFormData);
+
+      // Set your state variables here
+      setRegion(region);
+      setReceivesBenefits(receivesBenefits);
+      setSelectedServices(selectedServices);
+      setHomeStatus(homeStatus);
+      setPropertyType(propertyType);
+      setWallMaterial(wallMaterial);
+      setHeatingType(heatingType);
+      setHeatingSystemAge(heatingSystemAge);
+      setHouseAndStreet(houseAndStreet);
+      setPostcode(postcode);
+      setName(name);
+      setDob(dob);
+      setPhone(phone);
+      setEmail(email);
+    }
+  }, []);
+
+  const handleSubmitMessage = async (event) => {
+    event.preventDefault();
+
+    // Form data based on your state variables
+    const formData = {
+      name,
+      email,
+      subject,
+      message, // Make sure you have state for this and it's updated correctly
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message); // Or any other notification mechanism
+        alert("Message sent successfully!");
+        // Optionally reset form state here
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Submission error: " + error.message);
+    }
+  };
+
   const handleNext = (event) => {
     event.preventDefault();
     if (step === 2 && !isCheckboxCheckedStep2) {
@@ -43,9 +162,16 @@ function Solar() {
       (!heatingSystemAge || !houseAndStreet || !postcode)
     ) {
       alert("Please fill in all fields");
-    } else if (step === 7 && (!name || !dob || !phone || !email)) {
-      alert("Please fill in all fields");
-    } else if (step < 8) {
+    } else if (step === 7) {
+      if (!name || !dob || !phone || !email) {
+        alert("Please fill in all fields");
+      } else {
+        // Call handleSubmit() before incrementing the step to 8
+        handleSubmit(); // Submit the form data
+        setStep(step + 1); // Then, move to the next step, which shows the thank you message
+      }
+    } else if (step < 7) {
+      // Adjust this condition to allow incrementing steps up to 7
       setStep(step + 1);
     }
   };
@@ -563,7 +689,7 @@ function Solar() {
             in touch..
           </p>
           <div className="buttons-container-2">
-            <a href="/faqs" className="button-2">
+            <a href="/apply-for-grants-or-funding" className="button-2">
               GRANTS
             </a>
           </div>
@@ -604,17 +730,31 @@ function Solar() {
       </div>
       <div className="content-4">
         <div className="text-container-4">
-          <h1>Our certifications and memberships include:</h1>
-
-          <ul>
+          <h1>We can also help you get a grant for:</h1>
+          <div className="buttons-container-4-1">
+            <a href="/cavity-wall-insulation" className="button-4">
+              Cavity Wall Insulation
+            </a>
+            <a href="/loft-insulation" className="button-4">
+              Loft Insulation
+            </a>
+            <a href="/boiler-installations" className="button-4">
+              Boiler Installations
+            </a>
+            <a href="/smart-heating-controls" className="button-4">
+              Smart Heating Controls
+            </a>
+          </div>
+          {/* <ul>
             <li>Ocean Certification</li>
             <li>PAS2030 Certification</li>
             <li>TrustMark</li>
             <li>Domestic Energy Assessor</li>
             <li>Wide service area</li>
             <li>Accreditation Scheme</li>
-          </ul>
+          </ul> */}
         </div>
+
         {/* <div className="image-container-4">
             <img src={appLogo} alt="App Logo" className="image-4" />
           </div> */}
@@ -660,8 +800,10 @@ function Solar() {
               />
             </>
           </form>
-          <div className="buttons-container-2">
-            <button className="button-2">SEND MESSAGE</button>
+          <div className="buttons-container">
+            <button type="button" className="button" onClick={handleSubmitMessage}>
+              SEND MESSAGE
+            </button>
           </div>
         </div>
         <div className="text-container-5">
@@ -674,9 +816,10 @@ function Solar() {
           </h1>
 
           <div className="buttons-container-5">
-            <a href="/" className="button-5">
+            <button className="button-4" onClick={() => scrollToContent1()}>
+              {" "}
               APPLY FOR FUNDING
-            </a>
+            </button>
           </div>
         </div>
       </div>

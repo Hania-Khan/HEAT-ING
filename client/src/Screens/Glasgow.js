@@ -3,58 +3,8 @@ import Footer from "../Components/Footer";
 import "../Styling/AboutUs.css";
 import React, { useState } from "react";
 function Glasgow() {
-  const [step, setStep] = useState(1);
-  const [region, setRegion] = useState("");
-  const [receivesBenefits, setReceivesBenefits] = useState(null);
-  const [isCheckboxCheckedStep2, setIsCheckboxCheckedStep2] = useState(false);
-  const [isCheckboxCheckedStep3, setIsCheckboxCheckedStep3] = useState(false);
-  const [selectedServices, setSelectedServices] = useState([]);
-  const [homeStatus, setHomeStatus] = useState("");
-  const [propertyType, setPropertyType] = useState("");
-  const [wallMaterial, setWallMaterial] = useState("");
-  const [heatingType, setHeatingType] = useState("");
-  const [heatingSystemAge, setHeatingSystemAge] = useState("");
-  const [houseAndStreet, setHouseAndStreet] = useState("");
-  const [postcode, setPostcode] = useState("");
-  const [name, setName] = useState("");
-  const [dob, setDob] = useState("");
-  const [subject, setSubject] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
 
-  const handleNext = (event) => {
-    event.preventDefault();
-    if (step === 2 && !isCheckboxCheckedStep2) {
-      alert("Please check the box if you want to proceed");
-    } else if (step === 3 && !isCheckboxCheckedStep3) {
-      alert("Please check the box if you want to proceed");
-    } else if (step === 4 && (!homeStatus || !propertyType)) {
-      alert("Please select an option");
-    } else if (step === 5 && (!wallMaterial || !heatingType)) {
-      alert("Please select an option");
-    } else if (
-      step === 6 &&
-      (!heatingSystemAge || !houseAndStreet || !postcode)
-    ) {
-      alert("Please fill in all fields");
-    } else if (step === 7 && (!name || !dob || !phone || !email)) {
-      alert("Please fill in all fields");
-    } else if (step < 8) {
-      setStep(step + 1);
-    }
-  };
 
-  const handleBack = () => {
-    setStep(step - 1);
-  };
-
-  function scrollToContent1() {
-    const content1 = document.querySelector(".content-1");
-    if (content1) {
-      content1.scrollIntoView({ behavior: "smooth" });
-    }
-  }
 
   return (
     <div>
@@ -71,7 +21,7 @@ function Glasgow() {
             a company to help you save <br /> on your energy costs
           </p>
           <div className="buttons-container-2">
-            <a href="/contact-us" className="button-2">
+            <a href="/contact" className="button-2">
               GET IN TOUCH
             </a>
           </div>
@@ -121,7 +71,7 @@ function Glasgow() {
             </p>
           </div>
           <div className="buttons-container-2">
-            <a href="/air-source-pumpps" className="button-2">
+            <a href="/air-source-pumps" className="button-2">
               Air Source Pumps
             </a>
             <p>
@@ -137,22 +87,27 @@ function Glasgow() {
             <>
               <h1>Our contact details</h1>
               <label>Phone:</label>
-               <h2>01916 804575</h2>
+              <h2>01916 804575</h2>
               <label>Email</label>
               <a href="mailto:enquires@northeastinsulationservices.co.uk">
-            enquires@northeastinsulationservices.co.uk
-          </a>
+                enquires@northeastinsulationservices.co.uk
+              </a>
               <label>Address:</label>
               <p>1 Charles Street, Sunderland, SR6 0AN</p>
               <label>Business hours:</label>
-              <p>Monday – Friday: 9am – 5pm<br />Saturday and Sunday: closed</p>
+              <p>
+                Monday – Friday: 9am – 5pm
+                <br />
+                Saturday and Sunday: closed
+              </p>
               <label>Payment methods accepted:</label>
               <p>
-              BACS <br />Cheque<br /> Cash
+                BACS <br />
+                Cheque
+                <br /> Cash
               </p>
             </>
           </form>
-          
         </div>
         <div className="text-container-5">
           <h1>

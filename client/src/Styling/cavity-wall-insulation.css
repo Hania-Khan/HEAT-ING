@@ -4,31 +4,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.content-1 {
+  }
+  
+  .content-1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 150px;
     margin-top: 10px;
     background-color: #ffffff;
-}
-
-@keyframes slideInFromRight {
+  }
+  
+  @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%);
-        visibility: visible;
+      transform: translateX(100%);
+      visibility: visible;
     }
-
+  
     100% {
-        transform: translateX(0);
-        visibility: visible;
+      transform: translateX(0);
+      visibility: visible;
     }
-}
-
-ttext-container {
-    display: grid;
+  }
+  
+  /* .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    width: 50%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: left;
+  } */
+  
+  .text-container {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
@@ -39,21 +50,21 @@ ttext-container {
     animation-fill-mode: forwards;
     visibility: hidden;
     /* font-size: px; */
-}
-
-.text-container h1 {
+  }
+  
+  .text-container h1 {
     font-size: 60px;
-}
-
-.buttons-container {
+  }
+  
+  .buttons-container {
     display: flex;
     justify-content: center;
     /* Center the buttons horizontally */
     margin-top: 20px;
-}
-
-.button {
-    width: 200px;
+  }
+  
+  .button {
+    width: 150px;
     /* Set the width */
     height: 40px;
     /* Set the height */
@@ -80,23 +91,23 @@ ttext-container {
     text-decoration: none;
     /* Remove underline */
     font-weight: normal;
-}
-
-.button:hover {
+  }
+  
+  .button:hover {
     background-color: #d5a141;
     /* Change background color on hover */
     border-color: #6295c7;
     /* Change border color on hover */
     text-decoration: none;
     /* Remove underline on hover */
-}
-
-
-.form-container {
+  }
+  
+  
+  .form-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
     height: 100%;
     background-color: #6295c7;
     /* replace with your preferred color */
@@ -106,25 +117,24 @@ ttext-container {
     /* optional: round the corners */
     /* your styles */
     border-color: #064f7a;
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 40%;
-}
-
-button {
+  }
+  
+  button {
     align-self: flex-end;
     margin-top: auto;
-}
-
-label {
+  }
+  
+  label {
     margin-bottom: 1em;
-}
-
-select {
+  }
+  
+  select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -132,62 +142,37 @@ select {
     background-color: #ddd;
     /* dull color */
     border: none;
-}
-
-.checkbox-container>div {
+  }
+  
+  .checkbox-container>div {
     display: flex;
     align-items: center;
-}
-
-.checkbox-container>div>input {
+  }
+  
+  .checkbox-container>div>input {
     margin-right: 10px;
-}
-
-.radio-container {
+  }
+  
+  .radio-container {
     display: flex;
     align-items: center;
-}
-
-.radio-container input[type="radio"],
-.radio-container label {
+  }
+  
+  .radio-container input[type="radio"],
+  .radio-container label {
     margin: 0;
     padding: 10px;
-}
-
-.buttons-container-2-1 {
+  }
+  
+  .buttons-container {
     display: flex;
     justify-content: center;
     /* Center the buttons horizontally */
     margin-top: 20px;
-    padding: 40px;
-}
-
-.buttons-container-2-2 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 30px;
-}
-
-.buttons-container-2-3 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 20px;
-}
-
-.buttons-container-2-4 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 10px;
-}
-
-.button-2 {
-    width: 350px;
+  }
+  
+  .button-2 {
+    width: 150px;
     /* Set the width */
     height: 40px;
     /* Set the height */
@@ -214,19 +199,19 @@ select {
     text-decoration: none;
     /* Remove underline */
     font-weight: normal;
-}
-
-.button-2:hover {
+  }
+  
+  .button-2:hover {
     background-color: #d5a141;
     /* Change background color on hover */
     border-color: #064f7a;
     /* Change border color on hover */
     text-decoration: none;
     /* Remove underline on hover */
-}
-
-
-.lottie-container {
+  }
+  
+  
+  .lottie-container {
     position: absolute;
     top: 50px;
     /* Adjust this value as needed */
@@ -237,30 +222,30 @@ select {
     /* Subtract the same value as the top property */
     z-index: -1;
     /* This ensures the Lottie animation stays behind other content */
-}
-
-.text-container,
-.form-container {
+  }
+  
+  .text-container,
+  .form-container {
     position: relative;
     z-index: 1;
     /* Ensure content appears above the Lottie animation */
-}
-
-.content-2 {
+  }
+  
+  .content-2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 150px;
     margin-top: -100px;
     background-color: #ffffff;
-}
-
-
-.content-2 h1 {
+  }
+  
+  
+  .content-2 h1 {
     color: #6295c7;
-}
-
-.text-container-2 {
+  }
+  
+  .text-container-2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,126 +256,121 @@ select {
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
-
-}
-
-.text-container-2 h1 {
+  
+  }
+  
+  .text-container-2 h1 {
     font-size: 30px;
-}
-
-.image-container-2 {
+  }
+  
+  .image-container-2 {
     width: 100%;
     height: 200%;
-}
-
-.image-container-2 img {
+  }
+  
+  .image-container-2 img {
     max-width: 100%;
     max-height: 100%;
     animation: popout 10s ease forwards;
-
-}
-
-@keyframes slideInFromRight {
+  
+  }
+  
+  @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%);
-        visibility: visible;
+      transform: translateX(100%);
+      visibility: visible;
     }
-
+  
     100% {
-        transform: translateX(0);
-        visibility: visible;
+      transform: translateX(0);
+      visibility: visible;
     }
-}
-
-@keyframes popout {
+  }
+  
+  @keyframes popout {
     from {
-        transform: scale(0);
+      transform: scale(0);
     }
-
+  
     to {
-        transform: scale(1);
+      transform: scale(1);
     }
-}
-
-.form-container-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-}
-
-
-
-.content-3 {
+  }
+  
+  
+  
+  
+  
+  .content-3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 150px;
     margin-top: -200px;
     background-color: #ffffff;
-}
-
-@keyframes slideInFromRight {
+  }
+  
+  @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%);
-        visibility: visible;
+      transform: translateX(100%);
+      visibility: visible;
     }
-
+  
     100% {
-        transform: translateX(0);
-        visibility: visible;
+      transform: translateX(0);
+      visibility: visible;
     }
-}
-
-.text-container-3 {
+  }
+  
+  .text-container-3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     max-width: 800px;
     padding: 20px;
     text-align: left;
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
-}
-
-
-@keyframes popout {
+  }
+  
+  .image-container-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  
+  }
+  
+  .image-container-3 img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: popout 8s ease forwards;
+  
+  }
+  
+  @keyframes popout {
     from {
-        transform: scale(0);
+      transform: scale(0);
     }
-
+  
     to {
-        transform: scale(1);
+      transform: scale(1);
     }
-}
-
-
-
-.buttons-container-3 {
+  }
+  
+  
+  
+  .buttons-container-3 {
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-}
-
-.button-3 {
-    width: 200px;
+  }
+  
+  .button-3 {
+    width: 150px;
     height: 40px;
     border-radius: 25px;
     background-color: #6295c7;
@@ -406,71 +386,47 @@ form {
     margin-left: 0;
     text-decoration: none;
     font-weight: normal;
-
-}
-
-.button-3:hover {
+  
+  }
+  
+  .button-3:hover {
     background-color: #d5a141;
     border-color: #6295c7;
     text-decoration: none;
-}
-
-
-
-
-.form-container-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-}
-
-
-
-
-
-.content-5 {
+  }
+  
+  
+  
+  
+  
+  
+  .content-4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 150px;
     margin-top: -170px;
     background-color: #ffffff;
-}
-
-.content-5 h1 {
+  }
+  
+  .content-4 h1 {
     color: #327ebc;
     /* Change to the color you want */
-}
-
-@keyframes slideInFromRight {
+  }
+  
+  @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%);
-        visibility: visible;
+      transform: translateX(100%);
+      visibility: visible;
     }
-
+  
     100% {
-        transform: translateX(0);
-        visibility: visible;
+      transform: translateX(0);
+      visibility: visible;
     }
-}
-
-.text-container-5 {
+  }
+  
+  .text-container-4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -481,41 +437,41 @@ form {
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
-
-}
-
-.image-container-5 {
+  
+  }
+  
+  .image-container-4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30%;
     height: 100%;
     /* Adjust this value as needed */
-}
-
-.image-container-5 img {
+  }
+  
+  .image-container-4 img {
     max-width: 100%;
     max-height: 100%;
     animation: popout 1s ease forwards;
-}
-
-@keyframes popout {
+  }
+  
+  @keyframes popout {
     from {
-        transform: scale(0);
+      transform: scale(0);
     }
-
+  
     to {
-        transform: scale(1);
+      transform: scale(1);
     }
-}
-
-.buttons-container-5 {
+  }
+  
+  .buttons-container-4 {
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-}
-
-.button-5 {
+  }
+  
+  .button-4 {
     width: 250px;
     height: 40px;
     border-radius: 25px;
@@ -532,35 +488,136 @@ form {
     margin-left: 0;
     text-decoration: none;
     font-weight: normal;
-
-}
-
-.button-5:hover {
+  
+  }
+  
+  .button-4:hover {
     background-color: #d5a141;
     border-color: #6295c7;
     text-decoration: none;
-}
-
-
-
-.form-container-5 {
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .content-5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px;
+    margin-top: -170px;
+    background-color: #ffffff;
+  }
+  
+  .content-5 h1 {
+    color: #327ebc;
+    /* Change to the color you want */
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      visibility: visible;
+    }
+  
+    100% {
+      transform: translateX(0);
+      visibility: visible;
+    }
+  }
+  
+  .text-container-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 100px;
+    padding: 20px;
+    text-align: left;
+    animation: slideInFromRight 2s ease-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  
+  }
+  
+  .image-container-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: 100%;
+    /* Adjust this value as needed */
+  }
+  
+  .image-container-5 img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: popout 1s ease forwards;
+  }
+  
+  @keyframes popout {
+    from {
+      transform: scale(0);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  .buttons-container-5 {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+  
+  .button-5 {
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #6295c7;
+    border: 2px solid #6295c7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 50px; */
+    margin-top: 20px;
+    margin-left: 0;
+    text-decoration: none;
+    font-weight: normal;
+  
+  }
+  
+  .button-5:hover {
+    background-color: #d5a141;
+    border-color: #6295c7;
+    text-decoration: none;
+  }
+  
+  
+  
+  .form-container-5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 40%;
-    height: 200%;
+    height: 100%;
     background-color: #6295c7;
-    /* replace with your preferred color */
     padding: 20px;
-    /* add some padding */
     border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
     border-color: #064f7a;
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     height: 200%;
-}
+    width: 100%;
+  }

@@ -29,51 +29,74 @@ function Home() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
 
-
-
   const handleSubmit = async () => {
     // Collect all the form data into an object
     const formData = {
-      region, receivesBenefits, benefitsReceived: selectedServices, servicesRequired: selectedServices, 
-      homeStatus, propertyType, wallMaterial, heatingType, heatingSystemAge, 
-      houseAndStreet, postcode, name, dob, phone, email
+      region,
+      receivesBenefits,
+      benefitsReceived: selectedServices,
+      servicesRequired: selectedServices,
+      homeStatus,
+      propertyType,
+      wallMaterial,
+      heatingType,
+      heatingSystemAge,
+      houseAndStreet,
+      postcode,
+      name,
+      dob,
+      phone,
+      email,
     };
-      // Save form data to local storage
-  localStorage.setItem('formData', JSON.stringify(formData));
+    // Save form data to local storage
+    localStorage.setItem("formData", JSON.stringify(formData));
 
     try {
-      const response = await fetch('http://localhost:5000/apply', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/apply", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         console.log(data);
         alert("Application submitted successfully!");
-        // Handle success, e.g., redirecting to a thank you page or resetting form fields
+        console.log("Submitting form data:", formData);
       } else {
-        throw new Error('Something went wrong while submitting your application.');
+        throw new Error(
+          "Something went wrong while submitting your application."
+        );
       }
     } catch (error) {
-      console.error('Failed to submit application:', error);
+      console.error("Failed to submit application:", error);
       alert("Failed to submit application.");
     }
   };
 
   useEffect(() => {
     // Load form data from local storage
-    const savedFormData = localStorage.getItem('formData');
+    const savedFormData = localStorage.getItem("formData");
     if (savedFormData) {
       const {
-        region, receivesBenefits, selectedServices, 
-        homeStatus, propertyType, wallMaterial, heatingType, heatingSystemAge, 
-        houseAndStreet, postcode, name, dob, phone, email
+        region,
+        receivesBenefits,
+        selectedServices,
+        homeStatus,
+        propertyType,
+        wallMaterial,
+        heatingType,
+        heatingSystemAge,
+        houseAndStreet,
+        postcode,
+        name,
+        dob,
+        phone,
+        email,
       } = JSON.parse(savedFormData);
-  
+
       // Set your state variables here
       setRegion(region);
       setReceivesBenefits(receivesBenefits);
@@ -92,8 +115,6 @@ function Home() {
     }
   }, []);
 
-  
-
   const handleNext = (event) => {
     event.preventDefault();
     if (step === 2 && !isCheckboxCheckedStep2) {
@@ -109,13 +130,17 @@ function Home() {
       (!heatingSystemAge || !houseAndStreet || !postcode)
     ) {
       alert("Please fill in all fields");
-    } else if (step === 7 && (!name || !dob || !phone || !email)) {
-      alert("Please fill in all fields");
-    } else if (step < 8) {
+    } else if (step === 7) {
+      if (!name || !dob || !phone || !email) {
+        alert("Please fill in all fields");
+      } else {
+        // Call handleSubmit() before incrementing the step to 8
+        handleSubmit(); // Submit the form data
+        setStep(step + 1); // Then, move to the next step, which shows the thank you message
+      }
+    } else if (step < 7) {
+      // Adjust this condition to allow incrementing steps up to 7
       setStep(step + 1);
-    }else {
-      // When reaching step 8, submit all data
-      handleSubmit();
     }
   };
 
@@ -170,7 +195,10 @@ function Home() {
             more, just get in touch.
           </p>
           <div className="buttons-container">
-            <button className="button">Boiler Installations</button>
+            {/* <button className="button">Boiler Installations</button> */}
+            <a href="/contact" className="button">
+              Boiler Installations
+            </a>
             <button className="button">0191 6804575</button>
           </div>
         </div>
@@ -673,7 +701,7 @@ function Home() {
             replacement scheme.
           </p>
           <div className="buttons-container-3">
-            <a href="/contact-us" className="button-3">
+            <a href="/contact" className="button-3">
               CONTACT US
             </a>
           </div>

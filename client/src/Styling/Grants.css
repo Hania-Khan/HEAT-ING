@@ -13,7 +13,9 @@
     padding: 150px;
     margin-top: 10px;
     background-color: #ffffff;
+    position: relative;
 }
+
 
 @keyframes slideInFromRight {
     0% {
@@ -27,93 +29,45 @@
     }
 }
 
-ttext-container {
-    display: grid;
+
+.text-container {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    max-width: 800px;
-    padding: 70px;
+    max-width: 100px;
+    padding: 20px;
     text-align: left;
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
-    /* font-size: px; */
 }
 
-.text-container h1 {
-    font-size: 60px;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-}
 
 .button {
-    width: 200px;
-    /* Set the width */
+    width: 90px;
     height: 40px;
-    /* Set the height */
     border-radius: 25px;
-    /* Set the border-radius */
     background-color: #1a3d5f;
-    /* Set the background color */
-    border: 2px solid #6295c7;
-    /* Set the border */
+    border: 2px solid #767779;
     color: white;
-    /* Set the text color */
     font-weight: bold;
-    /* Set font weight */
     cursor: pointer;
-    /* Set cursor */
     display: flex;
-    /* Align text horizontally */
     justify-content: center;
-    /* Center text horizontally */
     align-items: center;
-    /* Center text vertically */
     margin: 0 5px;
-    /* Add margin around buttons */
     text-decoration: none;
-    /* Remove underline */
     font-weight: normal;
 }
 
 .button:hover {
     background-color: #d5a141;
-    /* Change background color on hover */
-    border-color: #6295c7;
-    /* Change border color on hover */
+    border-color: #294a63;
     text-decoration: none;
-    /* Remove underline on hover */
 }
 
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 40%;
-    height: 100%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 40%;
-}
 
 button {
     align-self: flex-end;
@@ -128,9 +82,7 @@ select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    /* round the corners */
     background-color: #ddd;
-    /* dull color */
     border: none;
 }
 
@@ -154,89 +106,42 @@ select {
     padding: 10px;
 }
 
-.buttons-container-2-1 {
+.buttons-container {
     display: flex;
     justify-content: center;
-    /* Center the buttons horizontally */
     margin-top: 20px;
-    padding: 40px;
-}
-
-.buttons-container-2-2 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 30px;
-}
-
-.buttons-container-2-3 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 20px;
-}
-
-.buttons-container-2-4 {
-    display: flex;
-    justify-content: center;
-    /* Center the buttons horizontally */
-    margin-top: 20px;
-    padding: 10px;
 }
 
 .button-2 {
-    width: 350px;
-    /* Set the width */
+    width: 70px;
     height: 40px;
-    /* Set the height */
     border-radius: 25px;
-    /* Set the border-radius */
     background-color: #064f7a;
-    /* Set the background color */
     border: 2px solid #064f7a;
-    /* Set the border */
     color: white;
-    /* Set the text color */
     font-weight: bold;
-    /* Set font weight */
     cursor: pointer;
-    /* Set cursor */
     display: flex;
-    /* Align text horizontally */
     justify-content: center;
-    /* Center text horizontally */
     align-items: center;
-    /* Center text vertically */
     margin: 0 5px;
-    /* Add margin around buttons */
     text-decoration: none;
-    /* Remove underline */
     font-weight: normal;
 }
 
 .button-2:hover {
     background-color: #d5a141;
-    /* Change background color on hover */
     border-color: #064f7a;
-    /* Change border color on hover */
     text-decoration: none;
-    /* Remove underline on hover */
 }
 
 
 .lottie-container {
     position: absolute;
     top: 50px;
-    /* Adjust this value as needed */
     left: 0;
-    width: 70%;
-    /* Adjust this value as needed */
     height: calc(100% - 50px);
-    /* Subtract the same value as the top property */
     z-index: -1;
-    /* This ensures the Lottie animation stays behind other content */
 }
 
 .text-container,
@@ -256,15 +161,15 @@ select {
 }
 
 
-.content-2 h1 {
-    color: #6295c7;
+.text-container-2 h1 {
+    color: #064f7a;
 }
 
 .text-container-2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     max-width: 800px;
     padding: 20px;
     text-align: left;
@@ -274,18 +179,15 @@ select {
 
 }
 
-.text-container-2 h1 {
-    font-size: 30px;
-}
 
 .image-container-2 {
-    width: 100%;
-    height: 200%;
+    width: 50%;
+    height: 50%;
 }
 
 .image-container-2 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50%;
+    max-height: 50%;
     animation: popout 10s ease forwards;
 
 }
@@ -312,37 +214,15 @@ select {
     }
 }
 
-.form-container-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-}
-
 
 
 .content-3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 150px;
-    margin-top: -200px;
-    background-color: #ffffff;
+    padding: 50px;
+    margin-top: -300px;
+    /* background-color: #839fb5; */
 }
 
 @keyframes slideInFromRight {
@@ -361,40 +241,76 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     max-width: 800px;
     padding: 20px;
     text-align: left;
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
+    /* background-color: #839fb5; */
+}
+
+.content-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px;
+    margin-top: -170px;
+    background-color: #ffffff;
+}
+
+.content-4 h1 {
+    color: #064f7a;
+    /* Change to the color you want */
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.text-container-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 1000px;
+    padding: 20px;
+    text-align: left;
+    animation: slideInFromRight 2s ease-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+
 }
 
 
-@keyframes popout {
-    from {
-        transform: scale(0);
-    }
 
-    to {
-        transform: scale(1);
-    }
-}
-
-
-
-.buttons-container-3 {
+.buttons-container-4 {
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
 }
 
-.button-3 {
-    width: 200px;
+.buttons-container-4-1 {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.button-4 {
+    width: 250px;
     height: 40px;
     border-radius: 25px;
-    background-color: #6295c7;
-    border: 2px solid #6295c7;
+    background-color: #839fb5;
+    border: 2px solid #839fb5;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -409,38 +325,11 @@ form {
 
 }
 
-.button-3:hover {
+.button-4:hover {
     background-color: #d5a141;
-    border-color: #6295c7;
+    border-color: #839fb5;
     text-decoration: none;
 }
-
-
-
-
-.form-container-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
-    padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-}
-
-
 
 
 
@@ -475,38 +364,13 @@ form {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    max-width: 800px;
+    max-width: 100px;
     padding: 20px;
     text-align: left;
     animation: slideInFromRight 2s ease-out;
     animation-fill-mode: forwards;
     visibility: hidden;
 
-}
-
-.image-container-5 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    height: 100%;
-    /* Adjust this value as needed */
-}
-
-.image-container-5 img {
-    max-width: 100%;
-    max-height: 100%;
-    animation: popout 1s ease forwards;
-}
-
-@keyframes popout {
-    from {
-        transform: scale(0);
-    }
-
-    to {
-        transform: scale(1);
-    }
 }
 
 .buttons-container-5 {
@@ -541,26 +405,93 @@ form {
     text-decoration: none;
 }
 
-
-
-.form-container-5 {
+.grants-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 40%;
-    height: 200%;
-    background-color: #6295c7;
-    /* replace with your preferred color */
+    align-items: center;
+    width: 100%;
+    background-color: #53708d;
+}
+
+.apply-for-funding {
+    background-color: #53708d;
+    /* Light theme background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
     padding: 20px;
-    /* add some padding */
-    border-radius: 10px;
-    /* optional: round the corners */
-    /* your styles */
-    border-color: #064f7a;
+    width: 80%;
+    max-width: 800px;
+    /* Adjust based on preference */
+}
+
+.funding-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #53708d;
+    align-items: center;
+    width: 100%;
+}
+
+.funding-form {
+    display: flex;
+    background-color: #53708d;
+    flex-direction: column;
+    width: 100%;
+}
+
+.funding-form h1 {
+    color: #327ebc;
+    /* Theme color for titles */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     height: 200%;
+    background-color: #1a3d5f;
+}
+
+.funding-form input[type="text"],
+.funding-form input[type="email"],
+.funding-form input[type="tel"],
+.funding-form textarea,
+.funding-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.funding-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.funding-form .buttons-container-5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.funding-form .button {
+    background-color: #6295c7;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.funding-form .button:hover {
+    background-color: #d5a141;
+    /* Hover state */
 }

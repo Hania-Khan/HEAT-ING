@@ -3,58 +3,44 @@ import Footer from "../Components/Footer";
 import "../Styling/AboutUs.css";
 import React, { useState } from "react";
 function Careers() {
-  const [step, setStep] = useState(1);
-  const [region, setRegion] = useState("");
-  const [receivesBenefits, setReceivesBenefits] = useState(null);
-  const [isCheckboxCheckedStep2, setIsCheckboxCheckedStep2] = useState(false);
-  const [isCheckboxCheckedStep3, setIsCheckboxCheckedStep3] = useState(false);
-  const [selectedServices, setSelectedServices] = useState([]);
-  const [homeStatus, setHomeStatus] = useState("");
-  const [propertyType, setPropertyType] = useState("");
-  const [wallMaterial, setWallMaterial] = useState("");
-  const [heatingType, setHeatingType] = useState("");
-  const [heatingSystemAge, setHeatingSystemAge] = useState("");
-  const [houseAndStreet, setHouseAndStreet] = useState("");
-  const [postcode, setPostcode] = useState("");
   const [name, setName] = useState("");
-  const [dob, setDob] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
 
-  const handleNext = (event) => {
+  const handleSubmitMessage = async (event) => {
     event.preventDefault();
-    if (step === 2 && !isCheckboxCheckedStep2) {
-      alert("Please check the box if you want to proceed");
-    } else if (step === 3 && !isCheckboxCheckedStep3) {
-      alert("Please check the box if you want to proceed");
-    } else if (step === 4 && (!homeStatus || !propertyType)) {
-      alert("Please select an option");
-    } else if (step === 5 && (!wallMaterial || !heatingType)) {
-      alert("Please select an option");
-    } else if (
-      step === 6 &&
-      (!heatingSystemAge || !houseAndStreet || !postcode)
-    ) {
-      alert("Please fill in all fields");
-    } else if (step === 7 && (!name || !dob || !phone || !email)) {
-      alert("Please fill in all fields");
-    } else if (step < 8) {
-      setStep(step + 1);
+
+    // Form data based on your state variables
+    const formData = {
+      name,
+      email,
+      subject,
+      message, // Make sure you have state for this and it's updated correctly
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message); // Or any other notification mechanism
+        alert("Message sent successfully!");
+        // Optionally reset form state here
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Submission error: " + error.message);
     }
   };
-
-  const handleBack = () => {
-    setStep(step - 1);
-  };
-
-  function scrollToContent1() {
-    const content1 = document.querySelector(".content-1");
-    if (content1) {
-      content1.scrollIntoView({ behavior: "smooth" });
-    }
-  }
 
   return (
     <div>
@@ -105,22 +91,22 @@ function Careers() {
             <>
               <h1>CURRENT VACANCIES</h1>
               <div className="buttons-container-2-1">
-                <a href="/" className="button-2">
+                <a href="/domestic-electrician-vacancy" className="button-2">
                   DOMESTIC ELECTRICIAN
                 </a>
               </div>
               <div className="buttons-container-2-2">
-                <a href="/" className="button-2">
+                <a href="/domestic-gas-engineer-vacancy" className="button-2">
                   DOMESTIC GAS ENGINEER
                 </a>
               </div>
               <div className="buttons-container-2-3">
-                <a href="/" className="button-2">
+                <a href="/retrofit-assessor-vacancy" className="button-2">
                   RETROFIT ASSESSOR
                 </a>
               </div>
               <div className="buttons-container-2-4">
-                <a href="/" className="button-2">
+                <a href="/retrofit-coordinator-vacancy" className="button-2">
                   RETROFIT COORDINATOR
                 </a>
               </div>
@@ -128,8 +114,6 @@ function Careers() {
           </form>
         </div>
       </div>
-
-     
 
       <div className="content-5">
         <div className="form-container-5">
@@ -171,8 +155,14 @@ function Careers() {
               />
             </>
           </form>
-          <div className="buttons-container-2">
-            <button className="button-2">SEND MESSAGE</button>
+          <div className="buttons-container">
+            <button
+              type="button"
+              className="button"
+              onClick={handleSubmitMessage}
+            >
+              SEND MESSAGE
+            </button>
           </div>
         </div>
         <div className="text-container-5">
@@ -184,11 +174,11 @@ function Careers() {
             we’ll be in touch.
           </h1>
 
-          <div className="buttons-container-5">
+          {/* <div className="buttons-container-5">
             <a href="/" className="button-5">
               APPLY FOR A GRANT
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
