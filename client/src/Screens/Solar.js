@@ -524,14 +524,14 @@ function Solar() {
                   {step > 1 && (
                     <button
                       type="button"
-                      className="button-2"
+                      className="button"
                       onClick={handleBack}
                     >
                       Back
                     </button>
                   )}
                   {step < 8 && (
-                    <button type="submit" className="button-2">
+                    <button type="submit" className="button">
                       Next
                     </button>
                   )}

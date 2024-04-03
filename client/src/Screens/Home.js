@@ -1,7 +1,7 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../Styling/Home.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LottieAnimation from "./lottie";
 import appLogo from "../img/app-logo.png";
 import boiler1 from "../img/boiler1.jpg";
@@ -29,6 +29,71 @@ function Home() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
 
+
+
+  const handleSubmit = async () => {
+    // Collect all the form data into an object
+    const formData = {
+      region, receivesBenefits, benefitsReceived: selectedServices, servicesRequired: selectedServices, 
+      homeStatus, propertyType, wallMaterial, heatingType, heatingSystemAge, 
+      houseAndStreet, postcode, name, dob, phone, email
+    };
+      // Save form data to local storage
+  localStorage.setItem('formData', JSON.stringify(formData));
+
+    try {
+      const response = await fetch('http://localhost:5000/apply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        alert("Application submitted successfully!");
+        // Handle success, e.g., redirecting to a thank you page or resetting form fields
+      } else {
+        throw new Error('Something went wrong while submitting your application.');
+      }
+    } catch (error) {
+      console.error('Failed to submit application:', error);
+      alert("Failed to submit application.");
+    }
+  };
+
+  useEffect(() => {
+    // Load form data from local storage
+    const savedFormData = localStorage.getItem('formData');
+    if (savedFormData) {
+      const {
+        region, receivesBenefits, selectedServices, 
+        homeStatus, propertyType, wallMaterial, heatingType, heatingSystemAge, 
+        houseAndStreet, postcode, name, dob, phone, email
+      } = JSON.parse(savedFormData);
+  
+      // Set your state variables here
+      setRegion(region);
+      setReceivesBenefits(receivesBenefits);
+      setSelectedServices(selectedServices);
+      setHomeStatus(homeStatus);
+      setPropertyType(propertyType);
+      setWallMaterial(wallMaterial);
+      setHeatingType(heatingType);
+      setHeatingSystemAge(heatingSystemAge);
+      setHouseAndStreet(houseAndStreet);
+      setPostcode(postcode);
+      setName(name);
+      setDob(dob);
+      setPhone(phone);
+      setEmail(email);
+    }
+  }, []);
+
+  
+
   const handleNext = (event) => {
     event.preventDefault();
     if (step === 2 && !isCheckboxCheckedStep2) {
@@ -48,6 +113,9 @@ function Home() {
       alert("Please fill in all fields");
     } else if (step < 8) {
       setStep(step + 1);
+    }else {
+      // When reaching step 8, submit all data
+      handleSubmit();
     }
   };
 
@@ -547,14 +615,14 @@ function Home() {
                   {step > 1 && (
                     <button
                       type="button"
-                      className="button-2"
+                      className="button"
                       onClick={handleBack}
                     >
                       Back
                     </button>
                   )}
                   {step < 8 && (
-                    <button type="submit" className="button-2">
+                    <button type="submit" className="button">
                       Next
                     </button>
                   )}
